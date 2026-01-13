@@ -9,7 +9,7 @@ so you may run into issues with Docker on Windows on the final step.
 
 Download the official Hytale downloader from the Hytale support page:
 
-> **Link:** *([insert official link here](https://downloader.hytale.com/hytale-downloader.zip))*
+> **Link:** *([Hytale Downloader](https://downloader.hytale.com/hytale-downloader.zip))*
 
 Once downloaded, extract it.
 
