@@ -2,6 +2,8 @@ data/
 cache/
 dist/
 
+downloader/hytale-downloader-linux-amd64
+
 *.log
 
 .DS_Store
