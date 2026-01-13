@@ -36,9 +36,9 @@ docker compose --profile update run --rm downloader
 ```
 
 ### What this does:
-• Downloads all required Hytale server files
-• Extracts them locally
-• Deletes the downloader container when finished
+* Downloads all required Hytale server files
+* Extracts them locally
+* Deletes the downloader container when finished
 
 ---
 
@@ -122,9 +122,9 @@ Hytale uses this identifier for encryption. If it cannot find it, it cannot encr
 
 ### What this means
 You will need to:
-• Research where your system exposes its hardware UUID
-• Bind-mount that file into the container
-• Update `docker-compose.yml` accordingly
+* Research where your system exposes its hardware UUID
+* Bind-mount that file into the container
+* Update `docker-compose.yml` accordingly
 
 This varies by operating system.
 
