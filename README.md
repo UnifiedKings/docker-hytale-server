@@ -134,6 +134,12 @@ This varies by operating system.
 
 Your Hytale server will be running on the port 5520. Make sure you port forward to this port.
 
+Whenever you want to update your server, just run:
+```bash
+docker compose --profile update run --rm downloader
+```
+then restart your server.
+
 ---
 
 If you need help, open an issue on the repository.
