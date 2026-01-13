@@ -1,0 +1,38 @@
+services:
+  downloader:
+    build: ./downloader
+    container_name: hytale-downloader
+    restart: "no"
+    profiles: ["update"]
+    environment:
+      PATCHLINE: "release"         # change to "pre-release" if you want
+      OUT_ZIP: "/cache/game.zip"
+    volumes:
+      - ./cache:/cache             # persists credentials + downloaded zip
+      - ./dist:/dist               # extracted server files end up here
+  
+  server:
+    build: ./server
+    container_name: hytale-server
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "5520:5520/udp"
+    volumes:
+      - ./data:/data               # world/logs/mods/configs live here
+      - ./dist/Server:/opt/hytale/Server:ro
+      - ./dist/Assets.zip:/opt/hytale/Assets.zip:ro
+
+    # Hytale wants a Linux UUID when using Encrypted auth persistence. These three mounts *should* give Hytale what it wants.
+    # If it is giving you an error like "hardware UUID" when trying to use Encrypted auth persistence, then you need some volume mount
+    # That lets Hytale figure out the hardware UUID.
+      - /etc/machine-id:/etc/machine-id:ro
+      - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
+      - /sys/class/dmi/id/product_uuid:/sys/class/dmi/id/product_uuid:ro
+    environment:
+      XMS: "2G"
+      XMX: "4G"
+      BIND_ADDR: "0.0.0.0"
+      BIND_PORT: "5520"
+      # EXTRA_ARGS: "--disable-sentry"
