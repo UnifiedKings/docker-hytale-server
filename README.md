@@ -1,6 +1,6 @@
 # Hytale Docker Server – First-Time Setup Guide
 
-This guide walks you through the **complete first-time setup** of the Hytale server using this Docker-based project. This was tested and used on a Linux machine,
+This guide walks you through the **complete first-time setup** of the Hytale server using Docker. This was tested and used on a Linux machine,
 so you may run into issues with Docker on Windows on the final step.
 
 ---
