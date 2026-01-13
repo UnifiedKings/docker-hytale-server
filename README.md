@@ -1,0 +1,1 @@
+Hello!  This simple docker program should allow you to host your own Hytale server.  There are a few steps you must do in order for it to work properly, but this will walk you through the steps you need to do.
