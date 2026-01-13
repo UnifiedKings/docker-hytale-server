@@ -15,7 +15,7 @@ Once downloaded, extract it.
 
 ---
 
-## 2. Place the Downloader Binary
+## 2. Replace the Downloader Binary
 
 Replace the placeholder file named:
 
